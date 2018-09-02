@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -19,7 +19,7 @@ footer {
 }
 
 button {
-  font-size: 20px;
+  font-size: 130%;
   padding: 10px 20px;
   border-radius: 5px;
 }
@@ -28,15 +28,14 @@ button:hover {
 }
 
 h2 {
-  margin-top: 30px;
-  font-size: 26px;
+  margin: 30px 10%;
+  font-size: 150%;
   line-height: 1.5;
   color: #009688;
   text-align: center;
-  margin-bottom: 30px;
 }
 h2 p {
-  margin: 0 15%;
+  margin: 0;
 }
 h2 p.left {
   text-align: left;
@@ -55,8 +54,10 @@ ul {
   padding: 0;
 }
 ul li {
+  border-color: #eee;
+  background-color: #f0f0f0;
   border-radius: 10px;
-  padding: 13px;
+  padding: 13px 20px;
   margin-bottom: 5px;
 }
 ul li:hover {
@@ -71,4 +72,31 @@ ul li.selected {
 a {
   color: #009688;
   text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 14px;
+  }
+  body {
+    width: auto;
+    max-width: initial;
+    margin: 0;
+    padding: 20px 25px;
+  }
+  footer {
+    margin-top: 25px;
+  }
+  footer button {
+    display: block;
+    width: 50%;
+    margin: 0 25%;
+    margin-top: 20px;
+  }
+  h2 {
+    margin: auto;
+  }
+  ul li {
+    padding: 9px 12px;
+  }
 }
