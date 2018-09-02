@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr-BE">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Sondage Mobilité à Sombreffe</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="./sondage.css">
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+  <script src="./sondage.js"></script>
+</head>
+<body ng-app="sent-mobilite">
+  <article>
+    <section id="introduction">
+      <h2>
+        <p class="left">Pour rendre <em>ma</em> mobilité plus douce,&nbsp;&hellip;
+        <p class="right">que devrait-<em>on</em> mettre en place?</p>
+      </h2>
+      <p>Que peut-on faire de concret à Sombreffe, à relativement court terme, pour installer des habitudes de mobilité alternatives à la voiture individuelle?</p>
+      <p>Le sondage vous invite à vous engager individuellement (ou en famille), en conditionnant votre engagement:
+      "SI X était organisé, alors je pourrais faire Y". Nous cherchons les X qui semblent avoir le plus de succès,
+      et vous inviterons à activer votre Y.</p>
+      <p>Comme il s'agit d'un "engagement" individuel, et que ce type d'engagement est difficile, ne multipliez pas
+      les réponses. Imaginez un ou deux comportements que vous pourriez changer et dites-nous ce qui vous y
+      aiderait!</p>
+      <footer>
+        <p>Une initiative citoyenne de <a href="http://sombreffe.reseautransition.be/" target="_blank">Sombreffe en
+        Transition</a>, Groupe Mobilité. <a href="./a-propos.html">En savoir plus</a> sur le contexte.
+        Nous respectons votre <a href="./confidentialite.html">anonynmat et vos données</a>.</p>
+        <p>
+          <button ng-click="next()">Oui, je participe!</button>
+        </p>
+      </footer>
+    </section>
+    <section id="main">
+      <h2>Pour améliorer ma mobilité et/ou son impact écologique, je souhaiterais à Sombreffe&nbsp;&hellip;</h2>
+      <ul>
+        <li id="main-scolaire">L'organisation de transport scolaire</li>
+        <li id="main-covoiturage">L'organisation de covoiturage domicile-travail plus aisé</li>
+        <li id="main-partage">La location ou l'emprunt de voitures partagées</li>
+        <li id="main-demande">L'organisation de transport à la demande</li>
+        <li id="main-douce">Une amélioration de l'infrastructure de mobilité douce</li>
+        <li id="main-groupes">Qu'on covoiture mieux au sein de groupes locaux (sport, SenT, associations de parents, etc.)</li>
+        <li id="main-autre">Autre&nbsp;&hellip;</li>
+      </ul>
+      <footer>
+        <p>Vous aurez l'occasion d'étayer vos réponses dans les pages suivantes.</p>
+        <p>
+          <button ng-click="previous()">Précédent</button>
+          <button ng-click="next()">Suivant</button>
+        </p>
+      </footer>
+    </section>
+    <section id="scolaire">
+      <h2>Je profiterais d'une solution de transport scolaire&nbsp;&hellip;</h2>
+      <ul>
+        <li id="scolaire-1">Vers les écoles de l'entité Sombreffoise</li>
+        <li id="scolaire-2">Vers Gembloux</li>
+        <li id="scolaire-3">Vers Louvain-la-Neuve</li>
+        <li id="scolaire-3">Vers Charleroi</li>
+        <li id="scolaire-3">Vers Namur</li>
+      </ul>
+      <footer>
+        <p>
+          <button ng-click="previous()">Précédent</button>
+          <button ng-click="next()">Suivant</button>
+        </p>
+      </footer>
+    </section>
+    <section id="covoiturage">
+      <h2>J'utiliserais du covoiturage domicile-travail&nbsp;&hellip;</h2>
+      <ul>
+        <li id="covoiturage-1">Vers les zoning avoisinants</li>
+        <li id="covoiturage-2">Vers Charleroi</li>
+        <li id="covoiturage-3">Vers Namur</li>
+        <li id="covoiturage-4">Vers Bruxelles</li>
+        <li id="covoiturage-5">Vers Louvain-la-Neuve / Wavre</li>
+        <li id="covoiturage-6">Autre: &nbsp;&hellip;</li>
+      </ul>
+      <footer>
+        <p>
+          <button ng-click="previous()">Précédent</button>
+          <button ng-click="next()">Suivant</button>
+        </p>
+      </footer>
+    </section>
+    <section id="partage">
+      <h2>Je participerais à l'organisation de partage de voiture&hellip;</h2>
+      <ul>
+        <li id="partage-1">Cambio (ou similaire)</li>
+        <li id="partage-2">Entre voisins</li>
+        <li id="partage-3">Autre: &nbsp;&hellip;</li>
+      </ul>
+      <footer>
+        <p>
+          <button ng-click="previous()">Précédent</button>
+          <button ng-click="next()">Suivant</button>
+        </p>
+      </footer>
+    </section>
+    <section id="demande">
+      <h2>J'utiliserais du transport à la demande&nbsp;&hellip;</h2>
+      <ul>
+        <li id="demande-1">De porte à porte</li>
+        <li id="demande-2">Vers les gares et aéroports spécifiquement</li>
+        <li id="demande-3">Vers les zoning avoisinants</li>
+      </ul>
+      <footer>
+        <p>
+          <button ng-click="previous()">Précédent</button>
+          <button ng-click="next()">Suivant</button>
+        </p>
+      </footer>
+    </section>
+    <section id="douce">
+      <h2>Je profiterais le plus d'une amélioration de l'insfrastructure&hellip;</h2>
+      <ul>
+        <li id="douce-1">Pour le déplacement à pied (trottoirs)</li>
+        <li id="douce-2">Pour le déplacement à vélo inter-villages</li>
+        <li id="douce-3">Pour le déplacement à vélo vers &nbsp;&hellip;</li>
+        <li id="douce-4">Autre: &nbsp;&hellip;</li>
+      </ul>
+      <footer>
+        <p>
+          <button ng-click="previous()">Précédent</button>
+          <button ng-click="next()">Suivant</button>
+        </p>
+      </footer>
+    </section>
+    <section id="merci">
+      <h2>Plus qu'un clic pour partager vos réponses</h2>
+      <p>Il ne vous reste plus qu'à soumettre vos réponses à l'aide du bouton ci-dessous, après relecture
+      éventuelle!</p>
+      <p>Sur base du résultat du sondage, le groupe Mobilité de <a href="http://sombreffe.reseautransition.be/"
+      target="_blank">Sombreffe en Transition</a> s'engage à identifier les aménagements nécessaires, à mettre en
+      oeuvre ceux qui semblent à portée, et à relayer ceux qui ne le sont pas à d'autres niveaux organisationnels
+      ou décisionnels.</p>
+      <p>Réalisations concrètes à l'appui, le groupe mobilité vous invitera à réfléchir à votre engagement individuel
+      à votre tour, en espérant que nous le contrétisions ensemble.</p>
+      <footer>
+        <p class="small">En soumettant, vous acceptez <em>notre</em> utilisation de <em>vos</em> réponses pour
+        atteindre les <a href="./a-propos.html">objectifs du sondage</a>.<br/>Nous vous
+        <a href="./confidentialite.html">respectons</a>.</p>
+        <p>
+          <button ng-click="start()">Revoir mes réponses</button>
+          <button ng-click="submit()">Soumettre (Merci!)</button>
+        </p>
+      </footer>
+    </section>
+  </article>
+</body>
+</html>

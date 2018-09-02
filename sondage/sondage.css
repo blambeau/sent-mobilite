@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,400i,600,600i,800');
+
+html {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  padding-bottom: 100px;
+}
+
+body {
+  width: 800px;
+  margin: 0 auto;
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+button:hover {
+  cursor: pointer;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 26px;
+  line-height: 1.5;
+  color: #009688;
+  text-align: center;
+  margin-bottom: 30px;
+}
+h2 p {
+  margin: 0 15%;
+}
+h2 p.left {
+  text-align: left;
+}
+h2 p.right {
+  text-align: right;
+}
+
+footer p {
+  text-align: center;
+  font-size: 80%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  border-radius: 10px;
+  padding: 13px;
+  margin-bottom: 5px;
+}
+ul li:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+ul li.selected {
+  background-color: #009688;
+  color: white;
+}
+
+a {
+  color: #009688;
+  text-decoration: underline;
+}
