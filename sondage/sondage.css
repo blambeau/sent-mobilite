@@ -44,6 +44,10 @@ h2 p.right {
   text-align: right;
 }
 
+p.text-center {
+  text-align: center;
+}
+
 footer p {
   text-align: center;
   font-size: 80%;
