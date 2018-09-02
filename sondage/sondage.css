@@ -73,6 +73,19 @@ ul li.selected {
   color: white;
 }
 
+ul li.autre textarea,
+ul li.autre textarea:focus {
+  display: block;
+  width: calc(100% - 30px);
+  height: 50px;
+  outline: none;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 0.5px solid #ddd;
+  font-size: 18px;
+}
+
 a {
   color: #009688;
   text-decoration: underline;

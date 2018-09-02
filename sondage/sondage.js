@@ -39,6 +39,7 @@ angular
         })();
 
         this.answers = {};
+        $scope.answers = this.answers;
 
         this.$watch = $scope.$watch.bind($scope);
 
@@ -46,9 +47,24 @@ angular
           return $scope.sections[$scope.currentIndex] == sectionId;
         }
 
-        this.toggleAnswer = function(id) {
-          this.answers[id] = this.answers[id] ? false : true;
-          return this.answers[id];
+        this.toggleAnswer = function(id, value) {
+          if (this.answers[id]) {
+            console.log("delete answer", id);
+            delete this.answers[id];
+          } else {
+            console.log("toggle answer", id, value);
+            this.answers[id] = value;
+          }
+          return !!this.answers[id];
+        }
+
+        this.setAnswer = function(id, value) {
+          console.log("set Answser", id, value);
+          this.answers[id] = value;
+        }
+
+        this.isSelectedAnswer = function(id) {
+          return !!this.answers[id];
         }
 
         this.findPage = function(functor) {
@@ -102,12 +118,45 @@ angular
 
         elm.on('click', function() {
           $scope.$apply(function() {
-            if (articleCtrl.toggleAnswer(attrs.id)) {
+            if (articleCtrl.toggleAnswer(attrs.id, elm.text())) {
               elm.addClass("selected")
             } else {
               elm.removeClass("selected");
             }
           })
+        })
+
+      }
+    };
+  })
+  .directive('autre', function(){
+    return {
+      restrict: 'C',
+      require: "^article",
+      template: "Autre&nbsp;&hellip;<textarea></textarea>",
+      link: function($scope, elm, attrs, articleCtrl) {
+
+        var textarea = elm.find('textarea');
+        textarea.css('display','none');
+        textarea.on('click', function(event){
+          event.stopPropagation();
+        });
+        textarea.on('change', function(){
+          $scope.$apply(function() {
+            articleCtrl.setAnswer(attrs.id, textarea.val());
+          });
+        });
+
+        elm.on('click', function(event) {
+          $scope.$apply(function() {
+            if (articleCtrl.isSelectedAnswer(attrs.id)) {
+              textarea.css('display','block');
+              textarea[0].focus();
+            } else {
+              textarea.css('display','none');
+              textarea.val('');
+            }
+          });
         })
 
       }
