@@ -44,7 +44,7 @@
         <li id="main-covoiturage">L'organisation de covoiturage domicile-travail plus aisé</li>
         <li id="main-partage">La location ou l'emprunt de voitures partagées</li>
         <li id="main-demande">L'organisation de transport à la demande</li>
-        <li id="main-douce">Une amélioration de l'infrastructure de mobilité douce</li>
+        <li id="main-douce">Une amélioration de l'infrastructure de mobilité douce (à pied, vélo, roller, etc.)</li>
         <li id="main-groupes">Qu'on covoiture mieux au sein de groupes locaux (sport, SenT, associations de parents, etc.)</li>
         <li id="main-autre" class="autre"></li>
       </ul>
@@ -60,11 +60,8 @@
       <h2>Je profiterais d'une solution de transport scolaire&nbsp;&hellip;</h2>
       <ul>
         <li id="scolaire-1">Vers les écoles de l'entité Sombreffoise</li>
-        <li id="scolaire-2">Vers l'extrascolaire Sombreffois</li>
-        <li id="scolaire-3">Vers Gembloux</li>
-        <li id="scolaire-4">Vers Louvain-la-Neuve</li>
-        <li id="scolaire-5">Vers Charleroi</li>
-        <li id="scolaire-6">Vers Namur</li>
+        <li id="scolaire-2">Vers l'extrascolaire Sombreffois (sport, académie, etc.)</li>
+        <li id="scolaire-3">Vers le secondaire et/ou supérieur (Gembloux, Louvain-la-Neuve, etc.)</li>
         <li id="scolaire-autre" class="autre"></li>
       </ul>
       <footer>
@@ -77,12 +74,16 @@
     <section id="covoiturage">
       <h2>J'utiliserais du covoiturage domicile-travail&nbsp;&hellip;</h2>
       <ul>
-        <li id="covoiturage-1">Dans le grand Sombreffe lui-même</li>
-        <li id="covoiturage-2">Vers les zoning avoisinants</li>
-        <li id="covoiturage-3">Vers Charleroi</li>
-        <li id="covoiturage-4">Vers Namur</li>
-        <li id="covoiturage-5">Vers Bruxelles</li>
-        <li id="covoiturage-6">Vers Louvain-la-Neuve / Wavre</li>
+        <li id="covoiturage-1">Dans le grand Sombreffe (Sombreffe, Boignée, Tongrinne, Ligny)</li>
+        <li id="covoiturage-2">Vers les zoning avoisinants (Gosselies, Crealys, Axis Park, etc.)</li>
+        <li id="covoiturage-autre" class="autre">Autre: &nbsp;&hellip;</li>
+      </ul>
+      <h2>Aujourd'hui je trouve qu'il est&nbsp;&hellip;</h2>
+      <ul>
+        <li id="covoiturage-3">Trop difficile de trouver des passagers</li>
+        <li id="covoiturage-3">Trop difficile de trouver des conducteurs</li>
+        <li id="covoiturage-4">Trop difficile de trouver un point de rendez-vous pas trop loin</li>
+        <li id="covoiturage-5">Trop difficile sur le plan des horaires</li>
         <li id="covoiturage-autre" class="autre">Autre: &nbsp;&hellip;</li>
       </ul>
       <footer>
@@ -95,7 +96,7 @@
     <section id="partage">
       <h2>Je participerais à l'organisation de voitures partagées&hellip;</h2>
       <ul>
-        <li id="partage-1">En louant une Cambio (ou similaire)</li>
+        <li id="partage-1">En louant une Cambio à Sombreffe même (ou similaire)</li>
         <li id="partage-2">En partageant ma voiture avec mes voisins</li>
         <li id="partage-3">En empruntant la voiture de mes voisins</li>
         <li id="partage-autre" class="autre">Autre: &nbsp;&hellip;</li>
@@ -111,8 +112,9 @@
       <h2>J'utiliserais du transport à la demande&nbsp;&hellip;</h2>
       <ul>
         <li id="demande-1">De porte à porte</li>
-        <li id="demande-2">Vers les gares et aéroports spécifiquement</li>
-        <li id="demande-3">Vers les zoning avoisinants</li>
+        <li id="demande-2">Pour faire mes courses ou aller au marché de Sombreffe</li>
+        <li id="demande-3">Vers les gares et aéroports spécifiquement</li>
+        <li id="demande-4">Vers les zoning avoisinants</li>
         <li id="demande-autre" class="autre">Autre: &nbsp;&hellip;</li>
       </ul>
       <footer>
@@ -123,11 +125,10 @@
       </footer>
     </section>
     <section id="douce">
-      <h2>Je profiterais le plus d'une amélioration de l'insfrastructure&hellip;</h2>
+      <h2>Je profiterais le plus d'une amélioration de l'insfrastructure de mobilité douce&hellip;</h2>
       <ul>
         <li id="douce-1">Pour le déplacement à pied (trottoirs)</li>
         <li id="douce-2">Pour le déplacement à vélo inter-villages</li>
-        <li id="douce-3">Pour le déplacement à vélo vers &nbsp;&hellip;</li>
         <li id="douce-autre">Autre: &nbsp;&hellip;</li>
       </ul>
       <footer>
@@ -137,10 +138,22 @@
         </p>
       </footer>
     </section>
-    <section id="merci">
+    <section id="soumission">
       <h2>Plus qu'un clic pour partager vos réponses</h2>
       <p>Il ne vous reste plus qu'à soumettre vos réponses à l'aide du bouton ci-dessous, après relecture
       éventuelle!</p>
+      <footer>
+        <p class="small">En soumettant, vous acceptez <em>notre</em> utilisation de <em>vos</em> réponses pour
+        atteindre les <a href="./a-propos.html">objectifs du sondage</a>.<br/>Nous respectons vos
+        <a href="./confidentialite.html">données personnelles</a>.</p>
+        <p>
+          <button ng-click="start()">Revoir mes réponses</button>
+          <button ng-click="next()">Soumettre (Merci!)</button>
+        </p>
+      </footer>
+    </section>
+    <section id="merci">
+      <h2>Merci</h2>
       <p>Sur base du résultat du sondage, le groupe Mobilité de <a href="http://sombreffe.reseautransition.be/"
       target="_blank">Sombreffe en Transition</a> s'engage à identifier les aménagements nécessaires, à mettre en
       oeuvre ceux qui semblent à portée, et à relayer ceux qui ne le sont pas à d'autres niveaux organisationnels
@@ -149,15 +162,6 @@
       à votre tour, en espérant bien sûr que nous le concrétiserons tous ensemble.</p>
       <p>En attendant, nous vous invitons à consulter notre <a href="https://sent-mobilite.klaro.cards/" target="_blank">Cartographie de la Mobilité alternative</a>, qui offre déjà une foule d'informations sur des initiatives
       publiques et privées. Vous en connaissez d'autres? Faites-le nous savoir!</p>
-      <footer>
-        <p class="small">En soumettant, vous acceptez <em>notre</em> utilisation de <em>vos</em> réponses pour
-        atteindre les <a href="./a-propos.html">objectifs du sondage</a>.<br/>Nous respectons vos
-        <a href="./confidentialite.html">données personnelles</a>.</p>
-        <p>
-          <button ng-click="start()">Revoir mes réponses</button>
-          <button ng-click="submit()">Soumettre (Merci!)</button>
-        </p>
-      </footer>
     </section>
   </article>
 </body>

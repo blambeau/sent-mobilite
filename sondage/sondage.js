@@ -15,6 +15,7 @@ angular
           "partage",
           "demande",
           "douce",
+          "soumission",
           "merci"
         ];
 
