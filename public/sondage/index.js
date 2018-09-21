@@ -157,8 +157,11 @@ angular
     return {
       restrict: 'C',
       require: "^article",
-      template: "Autre&nbsp;&hellip;<textarea></textarea>",
+      template: "{{label}}&nbsp;&hellip;<textarea></textarea>",
+      scope: true,
       link: function($scope, elm, attrs, articleCtrl) {
+
+        $scope.label = attrs.label || "Autre";
 
         var textarea = elm.find('textarea');
         textarea.css('display','none');

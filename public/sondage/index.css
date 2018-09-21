@@ -43,6 +43,10 @@ h2 p.left {
 h2 p.right {
   text-align: right;
 }
+h2 small {
+  display: block;
+  font-size: 80%;
+}
 
 p.text-center {
   text-align: center;
