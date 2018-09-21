@@ -20,14 +20,14 @@ Mail.defaults do
 end
 
 get '/' do
-  redirect "http://sombreffe-en-transition.be/mobilite/sondage/"
+  redirect "./sondage/"
 end
 
 get '/sondage/' do
   send_file File.join(settings.public_folder, 'sondage/index.html')
 end
 
-post '/answers/' do
+post '/sondage/answers/' do
   data = JSON.parse(request.body.read)
   mail = Mail.new do
     from    'blambeau@enspirit.be'

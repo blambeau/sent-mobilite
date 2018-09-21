@@ -99,7 +99,7 @@ angular
 
         this.submitAnswers = function() {
           $http
-            .post('/answers/', this.answers)
+            .post('./answers/', this.answers)
             .then(this.next.bind(this))
             .catch(function(err) {
               console.log(err);
