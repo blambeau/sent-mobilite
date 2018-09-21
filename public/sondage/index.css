@@ -31,7 +31,7 @@ h2 {
   margin: 30px 10%;
   font-size: 150%;
   line-height: 1.5;
-  color: #009688;
+  color: rgb(145,193,113);
   text-align: center;
 }
 h2 p {
@@ -73,7 +73,7 @@ ul li:hover {
   cursor: pointer;
 }
 ul li.selected {
-  background-color: #009688;
+  background-color: rgb(145,193,113);
   color: white;
 }
 
@@ -91,7 +91,7 @@ ul li.autre textarea:focus {
 }
 
 a {
-  color: #009688;
+  color: rgb(145,193,113);
   text-decoration: underline;
 }
 
