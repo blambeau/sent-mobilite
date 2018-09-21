@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: chefbe
+  name: sent-mobilite
+  labels:
+    name: sent-mobilite
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: sent-mobilite

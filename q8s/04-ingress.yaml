@@ -1,0 +1,24 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sent-mobilite
+  namespace: chefbe
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: www.sombreffe-mobilite.be
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: sent-mobilite
+          servicePort: 80
+  - host: sent-mobilite.be
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: sent-mobilite
+          servicePort: 80

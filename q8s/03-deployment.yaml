@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sent-mobilite
+  namespace: chefbe
+  labels:
+    app: sent-mobilite
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: sent-mobilite
+  template:
+    metadata:
+      labels:
+        app: sent-mobilite
+    spec:
+      containers:
+      - image: chefbe/sent-mobilite
+        name: sent-mobilite
+        envFrom:
+          - configMapRef:
+              name: sent-mobilite-config-map
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 60
+          timeoutSeconds: 10
+          periodSeconds: 60
+        resources:
+          requests:
+            memory: "250Mi"
+            cpu: "50m"

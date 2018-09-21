@@ -30,7 +30,7 @@ end
 post '/answers/' do
   data = JSON.parse(request.body.read)
   mail = Mail.new do
-    from    'info@sombreffe-en-transition.be'
+    from    'blambeau@enspirit.be'
     to      'mobilite@sombreffe-en-transition.be'
     subject 'Réponse au sondage'
     body    JSON.pretty_generate(data)
