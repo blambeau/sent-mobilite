@@ -31,7 +31,7 @@ h2 {
   margin: 30px 10%;
   font-size: 150%;
   line-height: 1.5;
-  color: rgb(145,193,113);
+  color: rgb(160,177,49);
   text-align: center;
 }
 h2 p {
@@ -73,7 +73,7 @@ ul li:hover {
   cursor: pointer;
 }
 ul li.selected {
-  background-color: rgb(145,193,113);
+  background-color: rgb(160,177,49);
   color: white;
 }
 
@@ -91,7 +91,7 @@ ul li.autre textarea:focus {
 }
 
 a {
-  color: rgb(145,193,113);
+  color: rgb(160,177,49);
   text-decoration: underline;
 }
 
@@ -116,8 +116,8 @@ a {
   }
   footer button {
     display: block;
-    width: 50%;
-    margin: 0 25%;
+    width: 70%;
+    margin: 0 15%;
     margin-top: 20px;
   }
   h2 {
@@ -125,5 +125,17 @@ a {
   }
   ul li {
     padding: 9px 12px;
+  }
+}
+
+@media (min-width: 800px) {
+  article:before {
+    background: url("./logo.jpg");
+    background-size: cover;
+    content: "";
+    display: block;
+    width: 3.5cm;
+    height: 3.5cm;
+    margin: auto;
   }
 }
