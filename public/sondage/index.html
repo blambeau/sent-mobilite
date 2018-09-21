@@ -28,113 +28,113 @@
       les réponses. Imaginez un ou deux comportements que vous pourriez changer et dites-nous ce qui vous y
       aiderait!</p>
       <footer>
-        <p>Une initiative citoyenne de <a href="http://sombreffe.reseautransition.be/" target="_blank">Sombreffe en
+        <p>Une initiative citoyenne de <a href="http://www.sombreffe-en-transition.be/" target="_blank">Sombreffe en
         Transition</a>, Groupe Mobilité. <a href="./a-propos.html">En savoir plus</a> sur le contexte. Visitez-aussi
         notre <a href="https://sent-mobilite.klaro.cards/" target="_blank">Cartographie</a>.
         Nous respectons votre <a href="./confidentialite.html">anonynmat et vos données</a>.</p>
         <p>
-          <button ng-click="next()">Oui, je participe!</button>
+          <button ng-disabled="!canNext()" ng-click="next()">Oui, je participe!</button>
         </p>
       </footer>
     </section>
     <section id="main">
       <h2>Pour améliorer ma mobilité et/ou son impact écologique, je souhaiterais à Sombreffe&nbsp;&hellip;</h2>
       <ul>
-        <li id="main-scolaire">L'organisation de transport scolaire</li>
-        <li id="main-covoiturage">L'organisation de covoiturage domicile-travail plus aisé</li>
-        <li id="main-partage">La location ou l'emprunt de voitures partagées</li>
-        <li id="main-demande">L'organisation de transport à la demande</li>
-        <li id="main-douce">Une amélioration de l'infrastructure de mobilité douce (à pied, vélo, roller, etc.)</li>
-        <li id="main-groupes">Qu'on covoiture mieux au sein de groupes locaux (sport, SenT, associations de parents, etc.)</li>
-        <li id="main-autre" class="autre"></li>
+        <li data-answer="scolaire">L'organisation de transport scolaire</li>
+        <li data-answer="covoiturage">L'organisation de covoiturage domicile-travail plus aisé</li>
+        <li data-answer="partage">La location ou l'emprunt de voitures partagées</li>
+        <li data-answer="demande">L'organisation de transport à la demande</li>
+        <li data-answer="douce">Une amélioration de l'infrastructure de mobilité douce (à pied, vélo, roller, etc.)</li>
+        <li data-answer="groupes">Qu'on covoiture mieux au sein de groupes locaux (sport, SenT, associations de parents, etc.)</li>
+        <li data-answer="autre" class="autre"></li>
       </ul>
       <footer>
         <p>Vous aurez l'occasion d'étayer vos réponses dans les pages suivantes.</p>
         <p>
           <button ng-click="previous()">Précédent</button>
-          <button ng-click="next()">Suivant</button>
+          <button ng-disabled="!canNext()" ng-click="next()">Suivant</button>
         </p>
       </footer>
     </section>
     <section id="scolaire">
       <h2>Je profiterais d'une solution de transport scolaire&nbsp;&hellip;</h2>
       <ul>
-        <li id="scolaire-1">Vers les écoles de l'entité Sombreffoise</li>
-        <li id="scolaire-2">Vers l'extrascolaire Sombreffois (sport, académie, etc.)</li>
-        <li id="scolaire-3">Vers le secondaire et/ou supérieur (Gembloux, Louvain-la-Neuve, etc.)</li>
-        <li id="scolaire-autre" class="autre"></li>
+        <li data-answer="vers-ecoles">Vers les écoles de l'entité Sombreffoise</li>
+        <li data-answer="vers-extrascolaire">Vers l'extrascolaire Sombreffois (sport, académie, etc.)</li>
+        <li data-answer="vers-exterieur">Vers le secondaire et/ou supérieur (Gembloux, Louvain-la-Neuve, etc.)</li>
+        <li data-answer="autre" class="autre"></li>
       </ul>
       <footer>
         <p>
           <button ng-click="previous()">Précédent</button>
-          <button ng-click="next()">Suivant</button>
+          <button ng-disabled="!canNext()" ng-click="next()">Suivant</button>
         </p>
       </footer>
     </section>
     <section id="covoiturage">
       <h2>J'utiliserais du covoiturage domicile-travail&nbsp;&hellip;</h2>
       <ul>
-        <li id="covoiturage-1">Dans le grand Sombreffe (Sombreffe, Boignée, Tongrinne, Ligny)</li>
-        <li id="covoiturage-2">Vers les zoning avoisinants (Gosselies, Crealys, Axis Park, etc.)</li>
-        <li id="covoiturage-autre" class="autre">Autre: &nbsp;&hellip;</li>
+        <li data-answer="sombreffe">Dans le grand Sombreffe (Sombreffe, Boignée, Tongrinne, Ligny)</li>
+        <li data-answer="zonings">Vers les zonings avoisinants (Gosselies, Crealys, Axis Park, etc.)</li>
+        <li data-answer="autre" class="autre">Autre: &nbsp;&hellip;</li>
       </ul>
       <h2>Aujourd'hui je trouve qu'il est&nbsp;&hellip;</h2>
       <ul>
-        <li id="covoiturage-3">Trop difficile de trouver des passagers</li>
-        <li id="covoiturage-3">Trop difficile de trouver des conducteurs</li>
-        <li id="covoiturage-4">Trop difficile de trouver un point de rendez-vous pas trop loin</li>
-        <li id="covoiturage-5">Trop difficile sur le plan des horaires</li>
-        <li id="covoiturage-autre" class="autre">Autre: &nbsp;&hellip;</li>
+        <li data-answer="passagers">Trop difficile de trouver des passagers</li>
+        <li data-answer="conducteurs">Trop difficile de trouver des conducteurs</li>
+        <li data-answer="rendez-vous">Trop difficile de trouver un point de rendez-vous pas trop loin</li>
+        <li data-answer="hoaraires">Trop difficile sur le plan des horaires</li>
+        <li data-answer="autre" class="autre">Autre: &nbsp;&hellip;</li>
       </ul>
       <footer>
         <p>
           <button ng-click="previous()">Précédent</button>
-          <button ng-click="next()">Suivant</button>
+          <button ng-disabled="!canNext()" ng-click="next()">Suivant</button>
         </p>
       </footer>
     </section>
     <section id="partage">
       <h2>Je participerais à l'organisation de voitures partagées&hellip;</h2>
       <ul>
-        <li id="partage-1">En louant une Cambio à Sombreffe même (ou similaire)</li>
-        <li id="partage-2">En partageant ma voiture avec mes voisins</li>
-        <li id="partage-3">En empruntant la voiture de mes voisins</li>
-        <li id="partage-autre" class="autre">Autre: &nbsp;&hellip;</li>
+        <li data-answer="cambio">En louant une Cambio à Sombreffe même (ou similaire)</li>
+        <li data-answer="partage-voisins">En partageant ma voiture avec mes voisins</li>
+        <li data-answer="emprunt-voisins">En empruntant la voiture de mes voisins</li>
+        <li data-answer="autre" class="autre">Autre: &nbsp;&hellip;</li>
       </ul>
       <footer>
         <p>
           <button ng-click="previous()">Précédent</button>
-          <button ng-click="next()">Suivant</button>
+          <button ng-disabled="!canNext()" ng-click="next()">Suivant</button>
         </p>
       </footer>
     </section>
     <section id="demande">
       <h2>J'utiliserais du transport à la demande&nbsp;&hellip;</h2>
       <ul>
-        <li id="demande-1">De porte à porte</li>
-        <li id="demande-2">Pour faire mes courses ou aller au marché de Sombreffe</li>
-        <li id="demande-3">Vers les gares et aéroports spécifiquement</li>
-        <li id="demande-4">Vers les zoning avoisinants</li>
-        <li id="demande-autre" class="autre">Autre: &nbsp;&hellip;</li>
+        <li data-answer="porte-a-porte">De porte à porte</li>
+        <li data-answer="courses">Pour faire mes courses ou aller au marché de Sombreffe</li>
+        <li data-answer="gares-aeroports">Vers les gares et aéroports spécifiquement</li>
+        <li data-answer="zonings">Vers les zonings avoisinants</li>
+        <li data-answer="autre" class="autre">Autre: &nbsp;&hellip;</li>
       </ul>
       <footer>
         <p>
           <button ng-click="previous()">Précédent</button>
-          <button ng-click="next()">Suivant</button>
+          <button ng-disabled="!canNext()" ng-click="next()">Suivant</button>
         </p>
       </footer>
     </section>
     <section id="douce">
       <h2>Je profiterais le plus d'une amélioration de l'insfrastructure de mobilité douce&hellip;</h2>
       <ul>
-        <li id="douce-1">Pour le déplacement à pied (trottoirs)</li>
-        <li id="douce-2">Pour le déplacement à vélo inter-villages</li>
-        <li id="douce-autre">Autre: &nbsp;&hellip;</li>
+        <li data-answer="pied">Pour le déplacement à pied (trottoirs)</li>
+        <li data-answer="velo">Pour le déplacement à vélo inter-villages</li>
+        <li data-answer="autre">Autre: &nbsp;&hellip;</li>
       </ul>
       <footer>
         <p>
           <button ng-click="previous()">Précédent</button>
-          <button ng-click="next()">Suivant</button>
+          <button ng-disabled="!canNext()" ng-click="next()">Suivant</button>
         </p>
       </footer>
     </section>
@@ -145,7 +145,7 @@
       <footer>
         <p>
           <button ng-click="start()">Revoir mes réponses</button>
-          <button ng-click="next()">Soumettre</button>
+          <button ng-disabled="!canNext()" ng-click="next()">Soumettre</button>
         </p>
         <p></p>
         <p class="small">En soumettant, vous acceptez <em>notre</em> utilisation de <em>vos</em> réponses pour

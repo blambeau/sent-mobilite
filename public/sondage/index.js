@@ -19,14 +19,26 @@ angular
           "merci"
         ];
 
+        this.noAnswers = [
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+
         this.conditions = [
           function(answers){ return true; },
           function(answers){ return true; },
-          function(answers){ return answers["main-scolaire"]; },
-          function(answers){ return answers["main-covoiturage"]; },
-          function(answers){ return answers["main-partage"]; },
-          function(answers){ return answers["main-demande"]; },
-          function(answers){ return answers["main-douce"]; },
+          function(answers){ return answers["main"]["scolaire"]; },
+          function(answers){ return answers["main"]["covoiturage"]; },
+          function(answers){ return answers["main"]["partage"]; },
+          function(answers){ return answers["main"]["demande"]; },
+          function(answers){ return answers["main"]["douce"]; },
           function(answers){ return true; },
         ];
 
@@ -39,7 +51,7 @@ angular
           }
         })();
 
-        this.answers = {};
+        this.answers = { main: {} };
         $scope.answers = this.answers;
 
         this.$watch = $scope.$watch.bind($scope);
@@ -48,29 +60,29 @@ angular
           return $scope.sections[$scope.currentIndex] == sectionId;
         }
 
-        this.toggleAnswer = function(id, value) {
-          if (this.answers[id]) {
-            console.log("delete answer", id);
-            delete this.answers[id];
+        this.toggleAnswer = function(section, id, value) {
+          this.answers[section] = this.answers[section] || {};
+          if (this.answers[section][id]) {
+            delete this.answers[section][id];
           } else {
-            console.log("toggle answer", id, value);
-            this.answers[id] = value;
+            this.answers[section][id] = value;
           }
-          return !!this.answers[id];
+          return !!this.answers[section][id];
         }
 
-        this.setAnswer = function(id, value) {
-          console.log("set Answser", id, value);
-          this.answers[id] = value;
+        this.setAnswer = function(section, id, value) {
+          this.answers[section] = this.answers[section] || {};
+          this.answers[section][id] = value;
         }
 
-        this.isSelectedAnswer = function(id) {
-          return !!this.answers[id];
+        this.isSelectedAnswer = function(section, id) {
+          this.answers[section] = this.answers[section] || {};
+          return !!this.answers[section][id];
         }
 
         this.findPage = function(functor) {
           var check = this.conditions[$scope.currentIndex];
-          if (!check(this.answers)) {
+          if (check && !check(this.answers)) {
             functor.bind(this)();
           }
         }
@@ -86,6 +98,13 @@ angular
         }
         $scope.previous = this.previous.bind(this);
 
+        this.canNext = function(section) {
+          var index = $scope.sections.indexOf(section);
+          return this.noAnswers[index] || (
+            this.answers[section] && Object.keys(this.answers[section]).length > 0
+          );
+        }
+
         this.next = function() {
           $scope.currentIndex = Math.min($scope.currentIndex+1, $scope.sections.length-1);
           this.findPage(this.next);
@@ -98,7 +117,9 @@ angular
     return {
       restrict: 'E',
       require: "^article",
+      scope: true,
       link: function($scope, elm, attrs, articleCtrl) {
+        $scope.sectionId = attrs.id;
 
         articleCtrl.$watch('currentIndex', function(){
           if (articleCtrl.isCurrent(attrs.id)) {
@@ -107,6 +128,10 @@ angular
             elm.css("display", "none");
           }
         })
+
+        $scope.canNext = function() {
+          return articleCtrl.canNext($scope.sectionId);
+        }
 
       }
     };
@@ -119,7 +144,7 @@ angular
 
         elm.on('click', function() {
           $scope.$apply(function() {
-            if (articleCtrl.toggleAnswer(attrs.id, elm.text())) {
+            if (articleCtrl.toggleAnswer($scope.sectionId, attrs.answer, elm.text())) {
               elm.addClass("selected")
             } else {
               elm.removeClass("selected");
@@ -144,13 +169,13 @@ angular
         });
         textarea.on('change', function(){
           $scope.$apply(function() {
-            articleCtrl.setAnswer(attrs.id, textarea.val());
+            articleCtrl.setAnswer($scope.sectionId, attrs.answer, textarea.val());
           });
         });
 
         elm.on('click', function(event) {
           $scope.$apply(function() {
-            if (articleCtrl.isSelectedAnswer(attrs.id)) {
+            if (articleCtrl.isSelectedAnswer($scope.sectionId, attrs.answer)) {
               textarea.css('display','block');
               textarea[0].focus();
             } else {
