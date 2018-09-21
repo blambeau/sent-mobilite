@@ -5,7 +5,7 @@ angular
       restrict: 'E',
       link: function($scope, elm, attrs) {
       },
-      controller: function($scope, $location) {
+      controller: function($scope, $location, $http) {
 
         $scope.sections = [
           "introduction",
@@ -18,18 +18,6 @@ angular
           "soumission",
           "merci"
         ];
-
-        this.noAnswers = [
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          true,
-          true
-        ]
 
         this.conditions = [
           function(answers){ return true; },
@@ -100,9 +88,7 @@ angular
 
         this.canNext = function(section) {
           var index = $scope.sections.indexOf(section);
-          return this.noAnswers[index] || (
-            this.answers[section] && Object.keys(this.answers[section]).length > 0
-          );
+          return this.answers[section] && Object.keys(this.answers[section]).length > 0;
         }
 
         this.next = function() {
@@ -110,6 +96,18 @@ angular
           this.findPage(this.next);
         }
         $scope.next = this.next.bind(this);
+
+        this.submitAnswers = function() {
+          $http
+            .post('/answers/', this.answers)
+            .then(this.next.bind(this))
+            .catch(function(err) {
+              console.log(err);
+              alert("Désolé une erreur survenue, merci de réessayer");
+            })
+          ;
+        }
+        $scope.submitAnswers = this.submitAnswers.bind(this);
       }
     };
   })
