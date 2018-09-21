@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/configuration-snippet: |-
       if ($host ~ "sombreffe-mobilite.be$") {
-        return 301 http://sombreffe-en-transition/mobilite/;
+        return 301 http://sombreffe-en-transition.be/mobilite/;
       }
       if ($request_uri !~ ^/mobilite) {
         return 302 http://sombreffe.reseautransition.be/;

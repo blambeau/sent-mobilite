@@ -1,0 +1,33 @@
+---
+name: |-
+  Old domain
+
+url: |-
+  http://www.sombreffe-mobilite.be
+
+services:
+- method: |-
+    GET
+
+  description: |-
+    Old root domain
+
+  input_schema: |-
+    { }
+
+  output_schema: |-
+    .
+
+  error_schema: |-
+    .
+
+  examples:
+
+    - description: |-
+        when requested, it redirects to http://sombreffe-en-transition.be/mobilite/
+      params: { }
+      expected:
+        content_type: text/html
+        status: 301
+        headers:
+          Location: http://sombreffe-en-transition.be/mobilite/

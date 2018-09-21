@@ -1,0 +1,54 @@
+---
+name: |-
+  New domain
+
+url: |-
+  http://sombreffe-en-transition.be{path}
+
+services:
+- method: |-
+    GET
+
+  description: |-
+    Old root domain
+
+  input_schema: |-
+    {
+      path: String
+    }
+
+  output_schema: |-
+    .
+
+  error_schema: |-
+    .
+
+  examples:
+
+    - description: |-
+        when requested, it redirects to http://sombreffe.reseautransition.be/
+      params:
+        path: '/'
+      expected:
+        content_type: text/html
+        status: 302
+        headers:
+          Location: http://sombreffe.reseautransition.be/
+
+    - description: |-
+        when /mobilite/ is requested
+      params:
+        path: '/mobilite/'
+      expected:
+        content_type: text/html
+        status: 301
+        headers:
+          Location: ./sondage/
+
+    - description: |-
+        when /mobilite/sondage/ is requested
+      params:
+        path: '/mobilite/sondage/'
+      expected:
+        content_type: text/html
+        status: 200

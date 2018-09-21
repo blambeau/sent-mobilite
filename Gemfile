@@ -6,5 +6,6 @@ gem "mail", "~> 2.7"
 group :test do
   gem "rake"
   gem "rspec"
-  gem "rack-test"
+  gem "rack-test", "~> 0.6.3"
+  gem "webspicy", "~> 0.12"
 end
