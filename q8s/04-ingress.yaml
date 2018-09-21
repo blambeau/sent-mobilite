@@ -6,8 +6,44 @@ metadata:
   namespace: chefbe
   annotations:
     kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/configuration-snippet: |-
+      if ($host ~ "sombreffe-mobilite.be$") {
+        return 301 http://sombreffe-en-transition/mobilite/;
+      }
+      if ($request_uri !~ ^/mobilite) {
+        return 302 http://sombreffe.reseautransition.be/;
+      }
 spec:
   rules:
+  - host: www.sombreffe-en-transition.be
+    http:
+      paths:
+      - path: /mobilite
+        backend:
+          serviceName: sent-mobilite
+          servicePort: 80
+  - host: sombreffe-en-transition.be
+    http:
+      paths:
+      - path: /mobilite
+        backend:
+          serviceName: sent-mobilite
+          servicePort: 80
+  - host: www.sombreffe-en-transition.be
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: sent-mobilite
+          servicePort: 80
+  - host: sombreffe-en-transition.be
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: sent-mobilite
+          servicePort: 80
   - host: www.sombreffe-mobilite.be
     http:
       paths:
@@ -15,7 +51,7 @@ spec:
         backend:
           serviceName: sent-mobilite
           servicePort: 80
-  - host: sent-mobilite.be
+  - host: sombreffe-mobilite.be
     http:
       paths:
       - path: /

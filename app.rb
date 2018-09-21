@@ -20,7 +20,7 @@ Mail.defaults do
 end
 
 get '/' do
-  redirect '/sondage/'
+  redirect "http://sombreffe-en-transition.be/mobilite/sondage/"
 end
 
 get '/sondage/' do
