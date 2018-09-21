@@ -11,7 +11,13 @@ metadata:
       if ($host ~ "sombreffe-mobilite.be$") {
         return 301 http://sombreffe-en-transition.be/mobilite/;
       }
-      if ($request_uri !~ ^/mobilite) {
+      if ($request_uri ~ ^/sondage/) {
+        return 301 http://sombreffe-en-transition.be/mobilite/sondage/;
+      }
+      if ($request_uri ~ ^/mobilite/$) {
+        return 302 http://sombreffe-en-transition.be/mobilite/sondage/;
+      }
+      if ($request_uri !~ ^/mobilite/) {
         return 302 http://sombreffe.reseautransition.be/;
       }
 spec:

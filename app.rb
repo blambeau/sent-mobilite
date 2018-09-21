@@ -20,7 +20,7 @@ Mail.defaults do
 end
 
 get '/' do
-  redirect "#{env['PATH_INFO']}sondage/"
+  redirect "/sondage/"
 end
 
 get '/sondage/' do

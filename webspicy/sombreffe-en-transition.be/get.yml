@@ -41,9 +41,9 @@ services:
         path: '/mobilite/'
       expected:
         content_type: text/html
-        status: 301
+        status: 302
         headers:
-          Location: ./sondage/
+          Location: http://sombreffe-en-transition.be/mobilite/sondage/
 
     - description: |-
         when /mobilite/sondage/ is requested
