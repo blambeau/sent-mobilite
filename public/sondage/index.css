@@ -95,6 +95,12 @@ a {
   text-decoration: underline;
 }
 
+.links a {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+
 @media (max-width: 800px) {
   html {
     font-size: 14px;

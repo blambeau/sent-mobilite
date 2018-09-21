@@ -131,6 +131,10 @@ angular
           return articleCtrl.canNext($scope.sectionId);
         }
 
+        $scope.cartoLink = function(modality) {
+          return "https://sent-mobilite.klaro.cards/boards/par-moyen-de-transport?modalite=" + modality;
+        }
+
       }
     };
   })
