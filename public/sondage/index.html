@@ -43,6 +43,7 @@
         <li data-answer="scolaire">L'organisation de transport scolaire</li>
         <li data-answer="covoiturage">L'organisation de covoiturage domicile-travail plus aisé</li>
         <li data-answer="partage">La location ou l'emprunt de voitures partagées</li>
+        <li data-answer="commun">Une meilleure présence des transports en commun</li>
         <li data-answer="demande">L'organisation de transport à la demande</li>
         <li data-answer="douce">Une amélioration de l'infrastructure de mobilité douce (à pied, vélo, roller, etc.)</li>
         <li data-answer="groupes">Qu'on covoiture mieux au sein de groupes locaux (sport, SenT, associations de parents, etc.)</li>
@@ -93,6 +94,22 @@
       <h2>Un atelier sur le covoiturage? <small>(p.ex. prise en main sur Carpool de TaxiStop)</small></h2>
       <ul>
         <li data-answer="atelier">Oui, je participerais (laissez-nous vos coordonnées en fin de sondage)</li>
+      </ul>
+      <footer>
+        <p>
+          <button ng-click="previous()">Précédent</button>
+          <button ng-disabled="!canNext()" ng-click="next()">Suivant</button>
+        </p>
+      </footer>
+    </section>
+    <section id="commun">
+      <h2>Pour moi, les transports en commun devraient&nbsp;&hellip;</h2>
+      <ul>
+        <li data-answer="densite">Proposer un réseau sombreffois plus dense</li>
+        <li data-answer="interconnexion">Garantir une meilleure interconnexion des réseaux (p.ex. bus, train)</li>
+        <li data-answer="frequence">Augmenter la fréquence des lignes (p.ex. bus)</li>
+        <li data-answer="points">Augmenter le nombre de points de prise en charge / de dépôt</li>
+        <li data-answer="autre" class="autre"></li>
       </ul>
       <footer>
         <p>
