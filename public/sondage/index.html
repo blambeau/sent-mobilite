@@ -33,7 +33,7 @@
         notre <a href="https://sent-mobilite.klaro.cards/" target="_blank">Cartographie</a>.
         Nous respectons votre <a href="./confidentialite.html">anonynmat et vos données</a>.</p>
         <p>
-          <button ng-click="next()">Oui, je participe!</button>
+          <button ng-click="next()">Je participe (5 min. environ)</button>
         </p>
       </footer>
     </section>
@@ -166,10 +166,18 @@
     </section>
     <section id="soumission">
       <h2>Plus qu'un clic pour partager vos réponses</h2>
+      <p>Sans obligation, n'hésitez pas à nous dire où vous habitez:</p>
+      <ul>
+        <li data-answer="village-tongrine">Tongrinne</li>
+        <li data-answer="village-boignee">Boignée</li>
+        <li data-answer="village-boignee">Sombreffe</li>
+        <li data-answer="village-boignee">Ligny</li>
+        <li data-answer="village-autre" class="autre">Autre: &nbsp;&hellip;</li>
+      </ul>
       <p>Si vous souhaitez nous laisser vos coordonnées, ou nous faire part de vos commentaires,
       vous pouvez le faire ci-dessous:</p>
       <ul>
-        <li data-answer="commentaire" class="autre" label="Votre avis / vos coordonnées">Commentaire: &nbsp;&hellip;</li>
+        <li data-answer="commentaire" class="autre" label="Votre avis / vos coordonnées" placeholder="P.ex. un email où vous joindre">Commentaire: &nbsp;&hellip;</li>
       </ul>
       <p>Il ne vous reste plus qu'à soumettre vos réponses à l'aide du bouton ci-dessous, après relecture
       éventuelle!</p>
@@ -211,6 +219,12 @@
         </a>
       </div>
       <p>Vous en connaissez d'autres ou vous souhaitez contribuer? Faites-le nous savoir en envoyant un email à <a href="mailto:mobilite@sombreffe-en-transition.be">mobilite@sombreffe-en-transition.be</a></p>
+      <footer>
+        <p>
+          <button ng-click="restart()">Au suivant!</button>
+        </p>
+      </footer>
+
     </section>
   </article>
 </body>

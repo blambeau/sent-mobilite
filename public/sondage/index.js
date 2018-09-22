@@ -5,7 +5,7 @@ angular
       restrict: 'E',
       link: function($scope, elm, attrs) {
       },
-      controller: function($scope, $location, $http) {
+      controller: function($scope, $location, $http, $timeout) {
 
         $scope.sections = [
           "introduction",
@@ -72,6 +72,10 @@ angular
           var check = this.conditions[$scope.currentIndex];
           if (check && !check(this.answers)) {
             functor.bind(this)();
+          } else {
+            $timeout(function(){
+              window.scrollTo(0, 0);
+            });
           }
         }
 
@@ -135,6 +139,10 @@ angular
           return "https://sent-mobilite.klaro.cards/boards/par-moyen-de-transport?modalite=" + modality;
         }
 
+        $scope.restart = function() {
+          window.location = window.location;
+        }
+
       }
     };
   })
@@ -161,11 +169,12 @@ angular
     return {
       restrict: 'C',
       require: "^article",
-      template: "{{label}}&nbsp;&hellip;<textarea></textarea>",
+      template: "{{label}}&nbsp;&hellip;<textarea placeholder=\"{{placeholder}}\"></textarea>",
       scope: true,
       link: function($scope, elm, attrs, articleCtrl) {
 
         $scope.label = attrs.label || "Autre";
+        $scope.placeholder = attrs.placeholder || "";
 
         var textarea = elm.find('textarea');
         textarea.css('display','none');
