@@ -52,7 +52,7 @@ get '/inscription' do
 end
 
 get '/inscription/' do
-  send_file File.join(settings.public_folder, 'ics/index.html')
+  send_file File.join(settings.public_folder, 'inscription/index.html')
 end
 
 post '/inscription/inscriptions/' do
