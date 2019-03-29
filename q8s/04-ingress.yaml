@@ -8,16 +8,13 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/configuration-snippet: |-
-      if ($host ~ "sombreffe-mobilite.be$") {
-        return 301 http://sombreffe-en-transition.be/mobilite/;
-      }
       if ($request_uri ~ ^/sondage/) {
         return 301 http://sombreffe-en-transition.be/mobilite/sondage/;
       }
       if ($request_uri ~ ^/mobilite/$) {
         return 302 http://sombreffe-en-transition.be/mobilite/sondage/;
       }
-      if ($request_uri !~ ^/mobilite/) {
+      if ($request_uri !~ ^/mobilite|ics/) {
         return 302 http://sombreffe.reseautransition.be/;
       }
 spec:
@@ -39,25 +36,25 @@ spec:
   - host: www.sombreffe-en-transition.be
     http:
       paths:
-      - path: /
+      - path: /ics
         backend:
           serviceName: sent-mobilite
           servicePort: 80
   - host: sombreffe-en-transition.be
     http:
       paths:
-      - path: /
+      - path: /ics
         backend:
           serviceName: sent-mobilite
           servicePort: 80
-  - host: www.sombreffe-mobilite.be
+  - host: www.sombreffe-en-transition.be
     http:
       paths:
       - path: /
         backend:
           serviceName: sent-mobilite
           servicePort: 80
-  - host: sombreffe-mobilite.be
+  - host: sombreffe-en-transition.be
     http:
       paths:
       - path: /
