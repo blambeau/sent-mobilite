@@ -42,3 +42,19 @@ post '/sondage/answers/' do
   mail.deliver
   200
 end
+
+get '/ics/' do
+  send_file File.join(settings.public_folder, 'ics/index.html')
+end
+
+post '/ics/' do
+  data = JSON.parse(request.body.read)
+  mail = Mail.new do
+    from    'blambeau@enspirit.be'
+    to      'incroyables-comestibles@sombreffe-en-transition.be'
+    subject 'Fiche ICS remplie en ligne'
+    body    JSON.pretty_generate(data)
+  end
+  mail.deliver
+  204
+end

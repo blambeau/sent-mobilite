@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr-BE">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Inscription Incroyables Comestibles - Sombreffe en Transition</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./index.css">
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="./index.js"></script>
+</head>
+<body ng-app="sent-ics">
+  <div class="container-fluid">
+    <form name="icsForm" ng-controller="IcsController">
+      <h1>Attention, cette fiche personnelle pourrait bien être Comestible !</h1>
+      <fieldset class="intro">
+        <img src="./logo.png">
+        <p>Le projet des « Incroyables Comestibles de Sombreffe » a pour but de mettre à disposition des cultures comestibles le longs de voiries, valoriser et protéger la biodiversité locale tout en ap- portant une dimension solidaire et conviviale à la commune. Nous somme par ailleur rattaché à «Sombreffe en Transition» (SenT), un groupe de citoyens sombreffois partageant nos valeurs, via lequel nous effectuons la majeur partie de notre communication.</p>
+      </fieldset>
+      <fieldset>
+        <h2>Toi... Oui, c’est ici de toi dont il est question cher Sombreffois !</h2>
+        <p><small>(Ces informations resteront confidentielles bien entendu et ne seront utilisées que pour vous re- contacter et vous tenir au courant de nos activités)</small></p>
+        <div class="form-group row">
+          <label class="col-sm-4" for="nomInput">Nom</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control form-control-sm" id="nomInput" ng-model="ics.personne.nom">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4" for="prenomInput">Prénom</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control form-control-sm" id="prenomInput" ng-model="ics.personne.prenom">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4" for="adresseInput">Adresse postale</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control form-control-sm" id="adresseInput" ng-model="ics.personne.adresse">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4" for="emailInput">Adresse email</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control form-control-sm" id="emailInput" ng-model="ics.personne.email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4" for="telephoneInput">Numéro de téléphone</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control form-control-sm" id="telephoneInput" ng-model="ics.personne.telephone">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4" for="dateInscription">Date d'inscription</label>
+          <div class="col-sm-8">
+            <input type="date" class="form-control form-control-sm" id="dateInscription" ng-model="ics.personne.dateInscription">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-4" for="fruitFavori">Fruit ou légume favori (et pourquoi pas ?)</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control form-control-sm" id="fruitFavori" ng-model="ics.personne.fruitFavori">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <h2>Souhaiterais-tu participer au projet des «Incroyables Comestibles de Sombreffe» ?</h2>
+        <div class="form-group">
+          <p>Si oui, de quelle(s) manière(s) ? En tant que...</p>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="radioOrganizer" name="organisation-comme" ng-model="ics.organisation.comme" class="custom-control-input" value="organisateur">
+            <label class="custom-control-label" for="radioOrganizer">
+              Organisateur
+              <small>(Je souhaite participer à l’organisation générale du projet en tant que AC- TIF ou CONSULTANT)</small>
+            </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="radioCordinateur" name="organisation-comme" ng-model="ics.organisation.comme" class="custom-control-input" value="coordinateur">
+            <label class="custom-control-label" for="radioCordinateur">
+              Coordinateur
+              <small>(Je souhaite être l’organisateur d’une activité ou être responsable d’un bac/une parcelle)</small>
+            </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="radioRelais" name="organisation-comme" ng-model="ics.organisation.comme" class="custom-control-input" value="relais">
+            <label class="custom-control-label" for="radioRelais">
+              Relais
+              <small>(Je suis membre d’une organisation pouvant collaborer avec les Incroyables Comes- tibles de Sombreffe)</small>
+            </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="radioSupport" name="organisation-comme" ng-model="ics.organisation.comme" class="custom-control-input" value="support">
+            <label class="custom-control-label" for="radioSupport">
+              Soutien
+              <small>(J'ai du matériel pouvant être utile au projet que je peux mettre à disposition si besoin)</small>
+            </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="radioActeurCle" name="organisation-comme" ng-model="ics.organisation.comme" class="custom-control-input" value="acteur-clef">
+            <label class="custom-control-label" for="radioActeurCle">
+              Acteur clé
+              <small>(Rôle primordial que représente le guide nature, l’expert dans un domaine se rapportant au projet, le photographe ou cinéaste, etc.), à toi de nous dire de quoi il s’agit !)</small>
+            </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="radioSuperVolontaire" name="organisation-comme" ng-model="ics.organisation.comme" class="custom-control-input" value="super-volontaire">
+            <label class="custom-control-label" for="radioSuperVolontaire">
+              Super Volontaire
+              <small>(Volontaire souhaitant apporter son aide à un coordinateur)</small>
+            </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="radioVolontaire" name="organisation-comme" ng-model="ics.organisation.comme" class="custom-control-input" value="volontaire">
+            <label class="custom-control-label" for="radioVolontaire">
+              Volontaire
+              <small>(Certaines activités m’intéressent particulièrement et j’y participerais très certainement)</small>
+            </label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="radioAdherent" name="organisation-comme" ng-model="ics.organisation.comme" class="custom-control-input" value="adherent">
+            <label class="custom-control-label" for="radioAdherent">
+              Adhérent
+              <small>(Je souhaite participer à l’une ou l’autre activité selon mes disponibilités et affinités)</small>
+            </label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2" for="organisationDetails">Détails</label>
+          <div class="col-sm-10">
+            <textarea class="form-control form-control-sm" id="organisationDetails" ng-model="ics.organisation.details" rows="5"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="organisationMembreSent" name="organisation-membre-sent" ng-model="ics.organisation.membreSenT">
+            <label class="custom-control-label" for="organisationMembreSent">Oui, je participe déjà à un autre groupe de SenT ? (Mobilité, Couture, Zero déchets ou Jardins partagés).</label>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <h2>Activités spécifiques d'intérêt (de quoi souhaites-tu être informé?)</h2>
+        <div class="form-group">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="interetsConstruction" name="interets" ng-model="ics.interets.construction" value="construction">
+            <label class="custom-control-label" for="interetsConstruction">Construction et évolution des bacs et lieux (certains en particulier ?)</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="interetsEntretien" name="interets" ng-model="ics.interets.entretien" value="entretien">
+            <label class="custom-control-label" for="interetsEntretien">Entretien des bacs et lieux (un en particulier ?)</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="interetsEducatif" name="interets" ng-model="ics.interets.educatif" value="educatif">
+            <label class="custom-control-label" for="interetsEducatif">Activités éducatives actives (construction d’hotel à insecte, plantation de haies fruitières, mise en place d’une mare, mise en place d’un bac à compost, etc.)</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="interetsOrganisation" name="interets" ng-model="ics.interets.organisation" value="organisation">
+            <label class="custom-control-label" for="interetsOrganisation">Organisation générale (les réunions, les séances de groupe projet pour mettre en place une activité, constitution d’un dossier pour un financement, etc.)</label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2" for="interetsDetails">Détails</label>
+          <div class="col-sm-10">
+            <textarea class="form-control form-control-sm" id="interetsDetails" ng-model="ics.interets.details" rows="5"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <p>Vous serez bien entendu toutes et tous invités aux activités de célébration !</p>
+        </div>
+      </fieldset>
+      <div class="form-group buttons">
+        <button ng-hide="success" type="submit" class="btn btn-primary" ng-disabled="!icsForm.$valid" ng-click="submitForm()">Envoyer!</button>
+        <p ng-show="success">Merci pour votre participation, nous vous recontactons rapidement!</p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
