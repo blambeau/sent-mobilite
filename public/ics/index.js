@@ -9,7 +9,7 @@ angular
     };
     $scope.submitForm = function() {
       $http
-        .post("/ics/", $scope.ics)
+        .post("./inscriptions/", $scope.ics)
         .then(function(){
           $scope.success = true;
         })

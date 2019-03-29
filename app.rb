@@ -19,6 +19,8 @@ Mail.defaults do
   end
 end
 
+## Mobilite
+
 get '/' do
   redirect "/sondage/"
 end
@@ -43,11 +45,17 @@ post '/sondage/answers/' do
   200
 end
 
-get '/ics/' do
+## ICS
+
+get '/inscription' do
+  redirect "/inscription/"
+end
+
+get '/inscription/' do
   send_file File.join(settings.public_folder, 'ics/index.html')
 end
 
-post '/ics/' do
+post '/inscription/inscriptions/' do
   data = JSON.parse(request.body.read)
   mail = Mail.new do
     from    'blambeau@enspirit.be'
