@@ -61,7 +61,21 @@ fieldset.intro p {
   width: 70%;
 }
 
+.custom-control + .custom-control {
+  margin-top: 5px;
+}
+
 .form-group.buttons {
   margin-top: 30px;
   text-align: center;
+}
+
+.form-group.buttons .btn {
+  display: block;
+  width: 200px;
+  margin: 30px auto;
+}
+
+form .ng-dirty.ng-invalid {
+  border: 1px solid red;
 }

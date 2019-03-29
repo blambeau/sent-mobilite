@@ -2,7 +2,11 @@ angular
   .module('sent-ics', [])
   .controller('IcsController', function($scope, $http){
     $scope.success = false;
-    $scope.ics = {};
+    $scope.ics = {
+      personne: {
+        dateInscription: new Date()
+      }
+    };
     $scope.submitForm = function() {
       $http
         .post("/ics/", $scope.ics)
